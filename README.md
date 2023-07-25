@@ -1,2 +1,2 @@
-# python-games
-Collection of simple games made in python just for practicing the language
+# Python Games
+Collection of simple games just for practicing Python
