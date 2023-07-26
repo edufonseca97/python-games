@@ -1,15 +1,16 @@
+import hangman
+
 def choose_game():
-    print("*********************************")
-    print("********Choose your game:********")
-    print("*********************************")
+    print("*********************")
+    print("* Choose your game: *")
+    print("*********************")
 
     print("(1) Hangman (2) Guessing")
 
     game = int(input("Which Game? "))
 
     if(game == 1):
-        print("*** HANGMAN ***")
-        # hangman.play()
+        hangman.play()
     elif(game == 2):
         print("*** GUESSING ***")
         # guessing.play()
