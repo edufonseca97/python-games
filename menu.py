@@ -1,21 +1,30 @@
 import hangman
 
-def choose_game():
+def display_game_menu():
+    """Display the game menu."""
     print("*********************")
     print("* Choose your game: *")
     print("*********************")
+    print("(1) Hangman (2) Guess The Number")
 
-    print("(1) Hangman (2) Guessing")
+def choose_game():
+    """Get user input for game selection and execute the chosen game."""
+    display_game_menu()
 
-    game = int(input("Which Game? "))
-
-    if(game == 1):
-        hangman.play()
-    elif(game == 2):
-        print("*** GUESSING ***")
-        # guessing.play()
-    else:
-        print("Invalid option! Pick another one.")
+    while True:
+        try:
+            game_choice = int(input("Which Game? "))
+            if game_choice == 1:
+                hangman.play()
+                break
+            elif game_choice == 2:
+                print("*** Guess the number ***")
+                # guessing.play()
+                break
+            else:
+                print("Invalid option! Please enter a valid number.")
+        except ValueError:
+            print("Invalid input! Please enter a valid number.")
 
 if(__name__ == "__main__"):
     choose_game()
