@@ -1,4 +1,5 @@
 import hangman
+import number_guesser
 
 def display_game_menu():
     """Display the game menu."""
@@ -18,8 +19,7 @@ def choose_game():
                 hangman.play()
                 break
             elif game_choice == 2:
-                print("*** Guess the number ***")
-                # guessing.play()
+                number_guesser.play()
                 break
             else:
                 print("Invalid option! Please enter a valid number.")
