@@ -3,18 +3,22 @@ import random
 def play():
     print_entrance()
 
-    secret_number = random.randint(1, 100) # Generate a random number between 1 and 100
+    lowest_number = 1
+    highest_number = 100
+    secret_number = random.randint(lowest_number, highest_number) # Generate a random number between 1 and 100
     max_attempts = 5
     player_attempts = 0    
 
     while player_attempts < max_attempts:
         try:
-            guess = int(input("Guess the number (between 1 and 100): "))
+            guess = int(input(f"Guess the number (between {lowest_number} and {highest_number}): "))
             player_attempts += 1
 
             if guess < secret_number:
+                lowest_number = guess + 1
                 print("Secret number is higher.")
             elif guess > secret_number:
+                highest_number = guess - 1
                 print("Secret number is lower.")
             else:
                 print("Congratulations! You have guessed the secret number! =D")
