@@ -12,20 +12,18 @@ def play():
     finish = False
     errors = 0
 
-    while(not finish and errors < 7):
-
+    while not finish and errors < 7:
         guess = player_guess()
 
-        if(guess in secret_word):
-            # change right letters
-            print(guess)
+        if guess in secret_word:
+            right_letters = update_right_letters(guess, secret_word, right_letters) # change right letters
         else:
             errors += 1
 
         finish = "_" not in right_letters
 
         print(right_letters)
-
+        
     if(finish):
         print("Congratulations!")
     else:
@@ -57,6 +55,10 @@ def player_guess():
     guess = input("Guess a letter: ")
     guess = guess.strip().upper()
     return guess
+
+def update_right_letters(guess, secret_word, right_letters):
+    update_letters = [letter if letter == guess else right for letter, right in zip(secret_word, right_letters)]
+    return update_letters
 
 if(__name__ == "__main__"):
     play()
