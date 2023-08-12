@@ -1,5 +1,5 @@
-import hangman
-import number_guesser
+import hangman # Import the hangman game module
+import number_guesser # Import the number guesser game module
 
 def display_game_menu():
     """Display the game menu."""
@@ -14,12 +14,12 @@ def choose_game():
 
     while True:
         try:
-            game_choice = int(input("Which Game? "))
+            game_choice = int(input("Which Game? ")) # Get user's game choice
             if game_choice == 1:
-                hangman.play()
+                hangman.play() # Start the hangman game
                 break
             elif game_choice == 2:
-                number_guesser.play()
+                number_guesser.play() # Start the number guesser game
                 break
             else:
                 print("Invalid option! Please enter a valid number.")
@@ -27,4 +27,4 @@ def choose_game():
             print("Invalid input! Please enter a valid number.")
 
 if(__name__ == "__main__"):
-    choose_game()
+    choose_game() # Start the game selection process
