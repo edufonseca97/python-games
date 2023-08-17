@@ -30,9 +30,9 @@ def play():
         print("You lost!")
 
 def print_entrance():
-    print("***********************");
-    print("* Welcome to Hangman! *");
-    print("***********************");
+    print("***********************")
+    print("* Welcome to Hangman! *")
+    print("***********************")
 
 def random_word():
     file = open("wordbank.txt", "r")
